@@ -1,0 +1,15 @@
+.filmContainer {
+  display: flex;
+}
+
+.filmTitle {
+  font-size: 20px;
+}
+
+.infoWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 70px;
+  margin-bottom: 10px;
+}

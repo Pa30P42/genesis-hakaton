@@ -8,9 +8,11 @@ const MovieList = () => {
   return (
     <div>
       <p>List:</p>
-      {testItem.map(item => (
-        <MovieListItem item={item} key={item.id} />
-      ))}
+      <div className="filmContainer">
+        {testItem.map(item => (
+          <MovieListItem item={item} key={item.id} />
+        ))}
+      </div>
     </div>
   );
 };
