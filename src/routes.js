@@ -11,6 +11,15 @@ export const routes = [
   },
 
   {
+    path: '/profile',
+    label: 'ProfilePage',
+    exact: false,
+    component: lazy(() => import('./pages/Profile/index')),
+    private: true,
+    restricted: false,
+  },
+
+  {
     path: '/home',
     label: 'HomePage',
     exact: false,
