@@ -1,24 +1,36 @@
-import React, { useDispatch, useSelector } from 'react';
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { useHistory } from 'react-router';
 import { Form, Formik } from 'formik';
 import ErrorValidation from './utils/ErrorValidation';
 import funcMessageAuth from './utils/funcMessageAuth';
 import { authValidationSchema } from './utils/validationSchema';
-import { authSlice } from '../../redux/slices/auth';
+import { createNewUser } from '../../redux/slices/auth';
 import './style.scss';
 
 function AuthForm() {
-  const users = useSelector(state => state.users);
+  const users = useSelector(state => state.auth.users);
   console.log(`users`, users);
   const dispatch = useDispatch();
+  let history = useHistory();
+
   return (
     <div className="registerPageContainer">
       <div className="contentPageContainer">
         <Formik
           initialValues={{ email: '', password: '', confirmPassword: '' }}
           validationSchema={authValidationSchema}
-          onSubmit={values => {
-            values.email && dispatch(authSlice.createNewUser(values));
-          }}
+          onSubmit={values =>
+            !users.filter(user => user.email === values.email)[0] &&
+            dispatch(
+              createNewUser({
+                name: '',
+                email: values.email,
+                password: values.password,
+              }),
+            ) &&
+            history.push('/home')
+          }
         >
           {({ values, handleChange, handleBlur, touched, errors }) => (
             <Form type="submit">
