@@ -6,7 +6,11 @@ const initialState = {};
 export const moviesSlice = createSlice({
   name: 'movies',
   initialState,
-  reducers: {},
+  reducers: {
+    setMovies: (state, { payload }) => {
+      state.movies = payload;
+    },
+  },
   extraReducers: {
     [fetchMoviesThunk.fulfilled]: (state, action) => {
       const movies = action.payload;
@@ -14,3 +18,5 @@ export const moviesSlice = createSlice({
     },
   },
 });
+
+export const moviesReducer = moviesSlice.reducer;
