@@ -1,0 +1,82 @@
+.registerPageContainer {
+  padding: 60px 0;
+}
+
+.contentPageContainer {
+  display: flex;
+  flex-direction: column;
+  width: 450px;
+  border: 1px solid black;
+  border-radius: 12px;
+  padding: 40px 40px 60px;
+  margin: 0 auto;
+}
+
+.errorMessageWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.titleRegister,
+.inputRegister,
+.buttonSubmit {
+  font-size: 16px;
+}
+.titleRegister,
+.inputRegister,
+.buttonSubmit {
+  // font-family: $font_family_main;
+  line-height: 1.2em;
+}
+.inputRegister {
+  color: black;
+}
+.titleRegister {
+  display: block;
+  margin-bottom: 8px;
+  margin-right: 20px;
+}
+.inputRegister,
+.buttonSubmit {
+  width: 100%;
+  height: 44px;
+}
+.inputRegister {
+  font-weight: 400;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 1px solid grey;
+  padding: 6px 12px 0;
+}
+.inputRegister {
+  margin-bottom: 30px;
+}
+.inValid {
+  border-color: red;
+}
+
+.buttonSubmit {
+  font-weight: 600;
+  color: red;
+  border: 1px solid red;
+  border-radius: 8px;
+  background-color: transparent;
+  cursor: pointer;
+  margin: 50px 0 10px;
+}
+.buttonSubmit:hover,
+.buttonSubmit:focus {
+  color: white;
+  border: 1px solid white;
+
+  background-color: red;
+}
+.linkToHome {
+  font-size: 12px;
+  text-decoration: underline;
+}
+.linkToHome:hover {
+  color: red;
+}
