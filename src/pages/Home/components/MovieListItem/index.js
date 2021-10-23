@@ -1,7 +1,11 @@
 import React from 'react';
 
-const MovieListItem = () => {
-  return <div>item</div>;
+const MovieListItem = ({ item }) => {
+  return (
+    <>
+      <div>{item.title}</div>
+    </>
+  );
 };
 
 export default MovieListItem;

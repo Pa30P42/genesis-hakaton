@@ -1,7 +1,18 @@
 import React from 'react';
+import MovieListItem from '../MovieListItem';
+import mockData from './mockData';
 
 const MovieList = () => {
-  return <div>List here</div>;
+  const testItem = mockData;
+
+  return (
+    <div>
+      <p>List:</p>
+      {testItem.map(item => (
+        <MovieListItem item={item} key={item.id} />
+      ))}
+    </div>
+  );
 };
 
 export default MovieList;
