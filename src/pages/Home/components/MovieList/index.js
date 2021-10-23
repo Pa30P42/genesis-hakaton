@@ -1,18 +1,13 @@
 import React from 'react';
 import MovieListItem from '../MovieListItem';
-import mockData from './mockData';
+import './style.scss';
 
-const MovieList = () => {
-  const testItem = mockData;
-
+const MovieList = ({ items }) => {
   return (
-    <div>
-      <p>List:</p>
-      <div className="filmContainer">
-        {testItem.map(item => (
-          <MovieListItem item={item} key={item.id} />
-        ))}
-      </div>
+    <div className="filmContainer">
+      {items.map(item => (
+        <MovieListItem item={item} key={item.id} />
+      ))}
     </div>
   );
 };

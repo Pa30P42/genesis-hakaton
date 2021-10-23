@@ -1,25 +1,25 @@
 import React from 'react';
+import SmartText from '../../../../components/SmartText/SmartText';
 import './style.scss';
 
 const MovieListItem = ({ item }) => {
+  const date = new Date(item.release_date);
+
   return (
     <>
-      <div className="filmContainer trendingListItem">
-        <p className="filmTitle"> {item.title}</p>
-        <p
-        // onClick={redirectToArtistPage}
-        >
-          {item.overview}
+      <div className="movieListItem">
+        <img
+          className="moviePic"
+          src={`https://image.tmdb.org/t/p/original/${item.poster_path}`}
+          alt="movie pic"
+          width="100%"
+        />
+        <p className="movieTitle"> {item.title}</p>
+        <p className="movieRelease">
+          Release date: {date.toLocaleDateString()}
         </p>
-        <img src={item.backdrop_path} alt="film pic" width="200" />
-        <a
-          // href={url}
-          target="_blank "
-          rel="noopener noreferrer"
-          // className={style.trackLink}
-        >
-          Link
-        </a>
+        <p className="movieRate">Rate: {item.vote_average}</p>
+        <SmartText className="movieOverview" text={item.overview} />
       </div>
     </>
   );
