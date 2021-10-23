@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useDispatch, useSelector } from 'react';
 import { Form, Formik } from 'formik';
 import ErrorValidation from './utils/ErrorValidation';
 import funcMessageAuth from './utils/funcMessageAuth';
 import { authValidationSchema } from './utils/validationSchema';
+import { authSlice } from '../../redux/slices/auth';
 import './style.scss';
 
 function AuthForm() {
+  const users = useSelector(state => state.users);
+  console.log(`users`, users);
+  const dispatch = useDispatch();
   return (
     <div className="registerPageContainer">
       <div className="contentPageContainer">
@@ -13,7 +17,7 @@ function AuthForm() {
           initialValues={{ email: '', password: '', confirmPassword: '' }}
           validationSchema={authValidationSchema}
           onSubmit={values => {
-            values.email && console.log(`values submit: `, values);
+            values.email && dispatch(authSlice.createNewUser(values));
           }}
         >
           {({ values, handleChange, handleBlur, touched, errors }) => (
