@@ -7,8 +7,14 @@ export const moviesSlice = createSlice({
   name: 'movies',
   initialState,
   reducers: {
-    setMovies: (state, { payload }) => {
-      state.movies = payload;
+    deleteMovie: (state, { payload }) => {
+      delete state[payload];
+    },
+    addMovie: (state, { payload }) => {
+      state[payload.id] = payload;
+    },
+    editMovie: (state, { payload }) => {
+      state[payload.id] = payload;
     },
   },
   extraReducers: {
@@ -20,3 +26,5 @@ export const moviesSlice = createSlice({
 });
 
 export const moviesReducer = moviesSlice.reducer;
+
+export const { deleteMovie, addMovie, editMovie } = moviesSlice.actions;

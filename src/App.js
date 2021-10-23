@@ -5,11 +5,18 @@ import './App.css';
 import PrivateRoute from './components/CustomRoutes/PrivateRoute';
 import PublicRoute from './components/CustomRoutes/PublicRoute';
 import NotFound from './pages/404/index';
-import { getMovies } from './API/movies';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchMoviesThunk } from './redux/slices/movies/thunks';
+import { getIsMoviesList } from './redux/slices/movies/selectors';
 
 function App() {
+  const dispatch = useDispatch();
+
+  const isListAvailable = useSelector(getIsMoviesList);
+
   useEffect(() => {
-    getMovies();
+    // getMovies();
+    if (!isListAvailable) dispatch(fetchMoviesThunk());
   }, []);
   return (
     <BrowserRouter className="App">
