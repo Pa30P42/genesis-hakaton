@@ -1,83 +1,28 @@
 import React from 'react';
 import "./style.scss"
 
+
 const Movie = () => {
   return (
-    <div>
-      <div>
+    <div className="product-container">
      <section className="product-card">
         <div className="wrapper">
             <div className="poster-left">
-              <img src="#"/>
+              <img className="poster-img"src="https://images.unsplash.com/photo-1605051538177-72c289389de5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2002&q=80"/>
             </div>
             <div className="poster-info">
                 <div className="poster-info_container">
-                    <div className="movie-title"></div>
+                    <h1 className="movie-title">Venom: Let There Be Carnage</h1>
                     <div className="movie-descr">
                         <h3 className="overview"> Overview</h3>
-                        <div className="overview-content-dynamic"> </div>
-                        <ul className="overview-actors">
-                            <li className="profile">
-                                <p className="profile-name">
-                                  <a></a>
-                                </p>
-                                <p className="character">
-                                  <a></a>
-                                </p>
-                            </li>
-
-                            <li className="profile">
-                                <p className="profile-name">
-                                  <a></a>
-                                </p>
-                                <p className="character">
-                                  <a></a>
-                                </p>
-                            </li>
-
-                            <li className="profile">
-                                <p className="profile-name">
-                                  <a></a>
-                                </p>
-                                <p className="character">
-                                  <a></a>
-                                </p>
-                            </li>
-
-                            <li className="profile">
-                                <p className="profile-name">
-                                  <a></a>
-                                </p>
-                                <p className="character">
-                                  <a></a>
-                                </p>
-                            </li>
-
-                            <li className="profile">
-                                <p className="profile-name">
-                                  <a></a>
-                                </p>
-                                <p className="character">
-                                  <a></a>
-                                </p>
-                            </li>
-
-                            <li className="profile">
-                                <p className="profile-name">
-                                  <a></a>
-                                </p>
-                                <p className="character">
-                                  <a></a>
-                                </p>
-                            </li>
-                        </ul> 
+                        <div className="overview-content-dynamic"> 
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
       </section>
-    </div>
-
     </div>
   );
 };
