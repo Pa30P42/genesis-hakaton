@@ -37,3 +37,12 @@ export const authValidationSchema = Yup.object().shape({
       'Field must have at least one numeric character',
     ),
 });
+
+export const profileValidationSchema = Yup.object().shape({
+  email: Yup.string()
+    .required('Required field')
+    .email('Please, enter correct email'),
+  name: Yup.string()
+    .required('Required field')
+    .email('Please, enter correct email'),
+});

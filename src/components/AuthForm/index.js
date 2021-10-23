@@ -1,8 +1,8 @@
 import React from 'react';
 import { Form, Formik } from 'formik';
-import ErrorValidation from './utils/ErrorValidation';
-import funcMessageAuth from './utils/funcMessageAuth';
-import { authValidationSchema } from './utils/validationSchema';
+import ErrorValidation from '../../utils/ErrorValidation';
+import funcMessageAuth from '../../utils/funcMessageAuth';
+import { authValidationSchema } from '../../utils/validationSchema';
 import './style.scss';
 
 function AuthForm() {
@@ -29,6 +29,7 @@ function AuthForm() {
                     }`}
                     autoComplete="off"
                     name="email"
+                    type="email"
                     value={values.email}
                     onChange={handleChange}
                     onBlur={handleBlur}
