@@ -38,15 +38,6 @@ export const registerValidationSchema = Yup.object().shape({
     ),
 });
 
-<<<<<<< HEAD:src/utils/validationSchema.js
-export const profileValidationSchema = Yup.object().shape({
-  email: Yup.string()
-    .required('Required field')
-    .email('Please, enter correct email'),
-  name: Yup.string()
-    .required('Required field')
-    .email('Please, enter correct email'),
-=======
 export const loginValidationSchema = Yup.object().shape({
   email: Yup.string()
     .required('Required field')
@@ -67,5 +58,10 @@ export const loginValidationSchema = Yup.object().shape({
       /^(?=.*[0-9]).{1,}$/,
       'Field must have at least one numeric character',
     ),
->>>>>>> 110dfdc3f145c83e5c592321bd239747a8d9a86e:src/pages/Authorization/components/AuthForm/utils/validationSchema.js
+});
+
+export const profileValidationSchema = Yup.object().shape({
+  email: Yup.string()
+    .required('Required field')
+    .email('Please, enter correct email'),
 });

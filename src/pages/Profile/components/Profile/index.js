@@ -86,7 +86,6 @@ function Profile() {
             >
               Save
             </button>
-            <button className="buttonCancel">Cancel</button>
           </Form>
         )}
       </Formik>
