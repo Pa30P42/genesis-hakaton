@@ -8,7 +8,7 @@ const MovieList = ({ movie }) => {
       {movie.map(movie => (
         <MovieListItem movie={movie} key={movie.id} />
       ))}
-    </div>
+  </div>
   );
 };
 
