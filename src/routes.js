@@ -2,28 +2,10 @@ import { lazy } from 'react';
 
 export const routes = [
   {
-    path: '/home',
+    path: '/',
     label: 'HomePage',
-    exact: false,
+    exact: true,
     component: lazy(() => import('./pages/Home/index')),
-    private: false,
-    restricted: false,
-  },
-
-  {
-    path: '/signin',
-    label: 'AuthPage',
-    exact: true,
-    component: lazy(() => import('./pages/Authorization/index')),
-    private: false,
-    restricted: false,
-  },
-
-  {
-    path: '/signup',
-    label: 'AuthPage',
-    exact: true,
-    component: lazy(() => import('./pages/Authorization/index')),
     private: false,
     restricted: false,
   },
@@ -32,18 +14,29 @@ export const routes = [
     path: '/signin',
     label: 'SignIn',
     exact: true,
-    // component: lazy(() => import('./pages/Movie/index')),
-    // private: false,
-    // restricted: false,
+    component: lazy(() => import('./pages/Authorization/index')),
+    private: false,
+    restricted: false,
   },
+
   {
     path: '/signup',
     label: 'SignUp',
     exact: true,
-    // component: lazy(() => import('./pages/Movie/index')),
-    // private: false,
-    // restricted: false,
+    component: lazy(() => import('./pages/Authorization/index')),
+    private: false,
+    restricted: false,
   },
+
+  {
+    path: '/profile',
+    label: 'ProfilePage',
+    exact: false,
+    component: lazy(() => import('./pages/Profile/index')),
+    private: true,
+    restricted: false,
+  },
+
   {
     path: '/movie/:movie_id',
     label: 'MoviePage',

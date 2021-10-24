@@ -7,7 +7,7 @@ import './style.scss';
 
 const Home = () => {
   const movies = useSelector(getMoviesList);
-  const perPage = 6;
+  const perPage = 12;
   const [pageCount] = useState(Math.round(movies.length / perPage));
   const [currentPage, setCurrentPage] = useState(1);
   const [currentMovies, setCurrentMovies] = useState([]);
