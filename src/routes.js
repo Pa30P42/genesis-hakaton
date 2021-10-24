@@ -2,7 +2,16 @@ import { lazy } from 'react';
 
 export const routes = [
   {
-    path: '/',
+    path: '/home',
+    label: 'HomePage',
+    exact: false,
+    component: lazy(() => import('./pages/Home/index')),
+    private: false,
+    restricted: false,
+  },
+
+  {
+    path: '/signin',
     label: 'AuthPage',
     exact: true,
     component: lazy(() => import('./pages/Authorization/index')),
@@ -11,10 +20,10 @@ export const routes = [
   },
 
   {
-    path: '/home',
-    label: 'HomePage',
-    exact: false,
-    component: lazy(() => import('./pages/Home/index')),
+    path: '/signup',
+    label: 'AuthPage',
+    exact: true,
+    component: lazy(() => import('./pages/Authorization/index')),
     private: false,
     restricted: false,
   },
