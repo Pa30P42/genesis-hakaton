@@ -1,20 +1,11 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import { Formik, Form } from 'formik';
-import { getCurrentUser } from '../../../../redux/slices/auth/selectors';
-import { editUser } from '../../../../redux/slices/auth';
 import funcMessageAuth from '../../../../utils/funcMessageAuth';
 import ErrorValidation from '../../../../utils/ErrorValidation';
 import { profileValidationSchema } from '../../../../utils/validationSchema';
 import './style.scss';
 
-function Profile() {
-  const dispatch = useDispatch();
-  const currentUser = useSelector(getCurrentUser);
-  const editUserProfile = user => {
-    dispatch(editUser(user));
-  };
-
+function Profile({ currentUser, editUserProfile }) {
   return (
     <div className="profilePageContainer">
       <div className="contentPageContainer">
@@ -25,7 +16,7 @@ function Profile() {
             avatar: '',
           }}
           validationSchema={profileValidationSchema}
-          onSubmit={values => console.log(`___submit: `, values)}
+          onSubmit={editUserProfile}
         >
           {({ values, handleChange, handleBlur, touched, errors }) => (
             <Form className="formContainer" type="submit">
@@ -79,11 +70,7 @@ function Profile() {
                   ) && funcMessageAuth(errors.name)}
                 </div>
               </label>
-              <button
-                type="submit"
-                className="buttonSubmit"
-                onClick={() => editUserProfile(values)}
-              >
+              <button type="submit" className="buttonSubmit">
                 Save
               </button>
             </Form>

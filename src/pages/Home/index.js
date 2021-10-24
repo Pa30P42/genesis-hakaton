@@ -5,23 +5,24 @@ import { getMoviesList } from '../../redux/slices/movies/selectors';
 import MovieList from './components/MovieList';
 import './style.scss';
 
+const MOVIES_PER_PAGE = 12;
+
 const Home = () => {
   const movies = useSelector(getMoviesList);
-  const perPage = 12;
-  const [pageCount] = useState(Math.round(movies.length / perPage));
+  const [pageCount] = useState(Math.round(movies.length / MOVIES_PER_PAGE));
   const [currentPage, setCurrentPage] = useState(1);
   const [currentMovies, setCurrentMovies] = useState([]);
 
   useEffect(() => {
-    const result = movies.slice(0, perPage);
+    const result = movies.slice(0, MOVIES_PER_PAGE);
     setCurrentMovies(result);
   }, []);
 
   const handlePageClick = e => {
     window.scrollTo(0, 0);
     const result = movies.slice(
-      (currentPage - 1) * perPage,
-      currentPage * perPage,
+      (currentPage - 1) * MOVIES_PER_PAGE,
+      currentPage * MOVIES_PER_PAGE,
     );
     setCurrentPage(e.selected + 1);
     setCurrentMovies(result);
