@@ -7,15 +7,20 @@ import {
   signInRoute,
   signUpRoute,
 } from '../../routes';
-import { isUserSignIn } from '../../redux/slices/auth/selectors';
+import {
+  getCurrentUser,
+  isUserSignIn,
+} from '../../redux/slices/auth/selectors';
 import { logoutUser } from '../../redux/slices/auth';
 import './styles.scss';
 
 const Navigation = () => {
   const isUserActive = useSelector(isUserSignIn);
   const dispatch = useDispatch();
+  const currentUser = useSelector(getCurrentUser);
 
   const logoutHandler = () => dispatch(logoutUser());
+
   return (
     <div className="container">
       <nav className="navigation">
@@ -63,6 +68,9 @@ const Navigation = () => {
           </div>
         ) : (
           <div>
+            <span className="helloUser">
+              Hello, {currentUser.name ? currentUser.name : 'dear Guest'}
+            </span>
             <button className="logoutBtn" onClick={logoutHandler}>
               Log Out
             </button>
