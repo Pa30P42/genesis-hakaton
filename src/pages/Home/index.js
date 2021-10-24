@@ -18,6 +18,7 @@ const Home = () => {
   }, []);
 
   const handlePageClick = e => {
+    window.scrollTo(0, 0);
     const result = movies.slice(
       (currentPage - 1) * perPage,
       currentPage * perPage,
