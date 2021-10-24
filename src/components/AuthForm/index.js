@@ -5,25 +5,36 @@ import { Form, Formik } from 'formik';
 import ErrorValidation from './utils/ErrorValidation';
 import funcMessageAuth from './utils/funcMessageAuth';
 import { authValidationSchema } from './utils/validationSchema';
-import { createNewUser } from '../../redux/slices/auth';
+import { createNewUser, loginUser } from '../../redux/slices/auth';
 import './style.scss';
+import withAuth from '../CustomRoutes/withRouterHoc';
 
 function AuthForm() {
   const users = useSelector(state => state.auth.users);
   console.log(`users`, users);
   const dispatch = useDispatch();
   let history = useHistory();
-
+  const location = history.location.pathname;
+  console.log(location, 'location');
+  console.log(`wuthAuth`, withAuth);
   return (
-    <div className="registerPageContainer">
+    <div className="authPageContainer">
       <div className="contentPageContainer">
         <Formik
           initialValues={{ email: '', password: '', confirmPassword: '' }}
           validationSchema={authValidationSchema}
           onSubmit={values =>
+            location === '/signup' &&
             !users.filter(user => user.email === values.email)[0] &&
             dispatch(
               createNewUser({
+                name: '',
+                email: values.email,
+                password: values.password,
+              }),
+            ) &&
+            dispatch(
+              loginUser({
                 name: '',
                 email: values.email,
                 password: values.password,
@@ -34,11 +45,11 @@ function AuthForm() {
         >
           {({ values, handleChange, handleBlur, touched, errors }) => (
             <Form type="submit">
-              <label className="labelRegister">
+              <label className="labelAuth">
                 <div className="errorMessageWrapper">
-                  <span className="titleRegister">Email</span>
+                  <span className="titleAuth">Email</span>
                   <input
-                    className={`inputRegister ${
+                    className={`inputAuth ${
                       values.email?.length > 0 && touched.email && errors.email
                         ? 'inValid'
                         : ''
@@ -58,11 +69,12 @@ function AuthForm() {
                   ) && funcMessageAuth(errors.email)}
                 </div>
               </label>
-              <label className="labelRegister">
+
+              <label className="labelAuth">
                 <div className="errorMessageWrapper">
-                  <span className="titleRegister">Password</span>
+                  <span className="titleAuth">Password</span>
                   <input
-                    className={`inputRegister ${
+                    className={`inputAuth ${
                       values.password?.length > 0 &&
                       touched.password &&
                       errors.password
@@ -85,41 +97,46 @@ function AuthForm() {
                   ) && funcMessageAuth(errors.password)}
                 </div>
               </label>
-              <label className="labelRegister">
-                <div className="errorMessageWrapper">
-                  <span className="titleRegister">Confirm password</span>
-                  <input
-                    className={`inputRegister ${
-                      values.confirmPassword?.length > 0 &&
-                      touched.confirmPassword &&
-                      errors.confirmPassword
-                        ? 'inValid'
-                        : ''
-                    }`}
-                    autoComplete="off"
-                    name="confirmPassword"
-                    type="password"
-                    value={values.confirmPassword}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    placeholder="Enter your password"
-                  />
-                  {(
-                    <ErrorValidation
-                      touched={touched.confirmPassword}
-                      message={errors.confirmPassword}
-                    />
-                  ) &&
-                    funcMessageAuth(
-                      values.confirmPassword.length > 0 &&
-                        values.confirmPassword !== values.password
-                        ? 'Password mismatch'
-                        : errors.confirmPassword,
-                    )}
-                </div>
-              </label>
 
-              <button className="buttonSubmit">Sign up</button>
+              {location === '/signup' && (
+                <label className="labelAuth">
+                  <div className="errorMessageWrapper">
+                    <span className="titleAuth">Confirm password</span>
+                    <input
+                      className={`inputAuth ${
+                        values.confirmPassword?.length > 0 &&
+                        touched.confirmPassword &&
+                        errors.confirmPassword
+                          ? 'inValid'
+                          : ''
+                      }`}
+                      autoComplete="off"
+                      name="confirmPassword"
+                      type="password"
+                      value={values.confirmPassword}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      placeholder="Enter your password"
+                    />
+                    {(
+                      <ErrorValidation
+                        touched={touched.confirmPassword}
+                        message={errors.confirmPassword}
+                      />
+                    ) &&
+                      funcMessageAuth(
+                        values.confirmPassword.length > 0 &&
+                          values.confirmPassword !== values.password
+                          ? 'Password mismatch'
+                          : errors.confirmPassword,
+                      )}
+                  </div>
+                </label>
+              )}
+
+              <button className="buttonSubmit">
+                {location === '/signin' ? 'Sign in' : 'Sign up'}
+              </button>
             </Form>
           )}
         </Formik>
