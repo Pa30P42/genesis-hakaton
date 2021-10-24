@@ -16,16 +16,15 @@ function App() {
   const isListAvailable = useSelector(getIsMoviesList);
 
   useEffect(() => {
-    // getMovies();
     if (!isListAvailable) dispatch(fetchMoviesThunk());
   }, []);
   return (
     <BrowserRouter className="App">
       <Suspense fallback="...Loading">
-        <header>
-          <Navigation />
-        </header>
         <Switch>
+          <header>
+            <Navigation />
+          </header>
           {routes.map(route =>
             route.private ? (
               <PrivateRoute key={route.label} {...route} />

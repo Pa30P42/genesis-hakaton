@@ -15,7 +15,7 @@ const Navigation = () => {
   return (
     <nav>
       <NavLink
-        to={homeRoute}
+        to={homeRoute.path}
         activeClassName="active"
         // onClick={onHandleChange}
       >
@@ -25,7 +25,7 @@ const Navigation = () => {
       {!isUserActive ? (
         <div>
           <NavLink
-            to={signInRoute}
+            to={signInRoute.path}
             exact
             activeClassName="active"
             // onClick={onHandleChange}
@@ -33,7 +33,7 @@ const Navigation = () => {
             Sign In
           </NavLink>
           <NavLink
-            to={signUpRoute}
+            to={signUpRoute.path}
             activeClassName="active"
             // onClick={onHandleChange}
           >
