@@ -16,6 +16,7 @@ const Navigation = () => {
   const dispatch = useDispatch();
 
   const logoutHandler = () => dispatch(logoutUser());
+
   return (
     <div className="container">
       <nav className="navigation">

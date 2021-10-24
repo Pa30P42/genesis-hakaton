@@ -3,13 +3,7 @@ import { Route } from 'react-router-dom';
 import withAuth from './withRouterHoc';
 
 const PublicRoute = ({ component: Component, ...routeProps }) => {
-  console.log(routeProps);
-
-  return (
-    <Route {...routeProps}>
-      <Component />
-    </Route>
-  );
+  return <Route component={Component} {...routeProps} />;
 };
 
 export default withAuth(PublicRoute);

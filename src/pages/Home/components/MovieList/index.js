@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import MovieListItem from '../MovieListItem';
 import './style.scss';
 
@@ -8,8 +8,8 @@ const MovieList = ({ movie }) => {
       {movie.map(movie => (
         <MovieListItem movie={movie} key={movie.id} />
       ))}
-  </div>
+    </div>
   );
 };
 
-export default MovieList;
+export default memo(MovieList);
