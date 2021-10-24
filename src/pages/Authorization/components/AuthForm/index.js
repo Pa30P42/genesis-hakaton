@@ -1,11 +1,11 @@
 import React from 'react';
 import { Form, Formik } from 'formik';
-import ErrorValidation from './utils/ErrorValidation';
-import funcMessageAuth from './utils/funcMessageAuth';
+import ErrorValidation from '../../../../utils/ErrorValidation';
+import funcMessageAuth from '../../../../utils/funcMessageAuth';
 import {
   registerValidationSchema,
   loginValidationSchema,
-} from './utils/validationSchema';
+} from '../../../../utils/validationSchema';
 import './style.scss';
 
 function AuthForm({ onSubmit, location }) {
