@@ -29,6 +29,22 @@ export const routes = [
   },
 
   {
+    path: '/signin',
+    label: 'SignIn',
+    exact: true,
+    // component: lazy(() => import('./pages/Movie/index')),
+    // private: false,
+    // restricted: false,
+  },
+  {
+    path: '/signup',
+    label: 'SignUp',
+    exact: true,
+    // component: lazy(() => import('./pages/Movie/index')),
+    // private: false,
+    // restricted: false,
+  },
+  {
     path: '/movie',
     label: 'MoviePage',
     exact: true,
@@ -48,6 +64,9 @@ export const routes = [
 ];
 
 export const homeRoute = routes.find(route => route.label === 'HomePage');
+export const movieRoute = routes.find(route => route.label === 'MoviePage');
+export const signInRoute = routes.find(route => route.label === 'SignIn');
+export const signUpRoute = routes.find(route => route.label === 'SignUp');
 // export const dynamicsRoute = routes.find(
 //   route => route.label === 'DynamicsPage',
 // );
