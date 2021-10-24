@@ -1,0 +1,2 @@
+.filmContainer{background:#41483C;display:-ms-grid;display:grid;-ms-grid-columns:(minmax(400px, 1fr))[auto-fill];grid-template-columns:repeat(auto-fill, minmax(400px, 1fr));-ms-grid-rows:(minmax(230px, 1fr))[auto-fill];grid-template-rows:repeat(auto-fill, minmax(230px, 1fr));gap:35px}
+/*# sourceMappingURL=style.min.css.map */

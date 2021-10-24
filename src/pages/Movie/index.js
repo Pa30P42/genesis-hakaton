@@ -28,16 +28,25 @@ const Movie = ({ id = 671 }) => {
           <div className="poster-info">
             <div className="poster-info_container">
               <h1 className="movie-title">{chosenMovie.title}</h1>
-              <p className="release-day">{chosenMovie.release_date}</p>
-              <p className="rating">{chosenMovie.vote_average}</p>
+              <p className="release-day">Release Date: {chosenMovie.release_date}</p>
+              <p className="rating">Avarage Rate: {chosenMovie.vote_average}</p>
               <div className="movie-descr">
-                <h3 className="overview"> Overview</h3>
+                <h3 className="overview">Overview</h3>
                 <div className="overview-content-dynamic">
                   {chosenMovie.overview}
                 </div>
               </div>
             </div>
           </div>
+
+          <div className="movie-action">
+                <div className="btn">
+                  <button className ="delete">Delete</button>
+                </div>
+                <div className="btn">
+                  <button className ="edit">Edit</button>
+                </div>
+              </div>
         </div>
       </section>
     </div>

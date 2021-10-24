@@ -1,8 +1,16 @@
+// .filmContainer {
+//   display: flex;
+//   //   flex-direction: column;
+//   justify-content: space-between;
+//   min-height: 70px;
+//   margin-bottom: 10px;
+//   flex-wrap: wrap;
+// }
+
 .filmContainer {
-  display: flex;
-  //   flex-direction: column;
-  justify-content: space-between;
-  min-height: 70px;
-  margin-bottom: 10px;
-  flex-wrap: wrap;
+  background: #41483C;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-template-rows: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 35px;
 }
