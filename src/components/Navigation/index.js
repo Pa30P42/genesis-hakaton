@@ -10,6 +10,7 @@ import {
 import { isUserSignIn } from '../../redux/slices/auth/selectors';
 import { logoutUser } from '../../redux/slices/auth';
 import './styles.scss';
+import Logo from '../Logo';
 
 const Navigation = () => {
   const isUserActive = useSelector(isUserSignIn);
@@ -20,7 +21,8 @@ const Navigation = () => {
   return (
     <div className="container">
       <nav className="navigation">
-        <div>
+        <div className="logoContainer">
+          <Logo />
           <NavLink
             exact={homeRoute.exact}
             className="navLink homeLink "
