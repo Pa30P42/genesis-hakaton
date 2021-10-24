@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  currentUser: { email: '' },
+  currentUser: { id: '', email: '', name: '' },
   users: [],
 };
 
@@ -14,9 +14,10 @@ export const authSlice = createSlice({
     },
     createNewUser: (state, { payload }) => {
       state.users = [...state.users, payload];
+      state.currentUser = { id: payload.id, email: payload.email, name: '' };
     },
     logoutUser: state => {
-      state.currentUser = null;
+      state.currentUser = { id: '', email: '', name: '' };
     },
   },
 });

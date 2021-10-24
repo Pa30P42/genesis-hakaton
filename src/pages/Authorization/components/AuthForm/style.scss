@@ -1,9 +1,11 @@
 .authPageContainer {
   padding: 60px 0;
 }
-
-.contentPageContainer {
+.contentPageContainer,
+.errorMessageWrapper {
   display: flex;
+}
+.contentPageContainer {
   flex-direction: column;
   width: 450px;
   border: 1px solid var(--secondary-decoration-color);
@@ -11,10 +13,8 @@
   padding: 40px 40px 60px;
   margin: 0 auto;
 }
-
 .errorMessageWrapper {
   position: relative;
-  display: flex;
   align-items: center;
   width: 100%;
 }
@@ -30,7 +30,6 @@
   line-height: 1.2em;
   color: var(--main-font-color);
 }
-
 .titleAuth {
   display: block;
   margin-bottom: 8px;
@@ -48,14 +47,11 @@
   border-left: none;
   border-bottom: 1px solid var(--secondary-decoration-color);
   padding: 6px 12px 0;
-}
-.inputAuth {
   margin-bottom: 30px;
 }
 .inValid {
   border-color: var(--error-color);
 }
-
 .buttonSubmit {
   font-weight: 600;
   color: var(--main-font-color);

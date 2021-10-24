@@ -1,14 +1,16 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import './styles.scss';
 import { homeRoute, signInRoute, signUpRoute } from '../../routes';
-
-import { useSelector } from 'react-redux';
 import { isUserSignIn } from '../../redux/slices/auth/selectors';
+import { logoutUser } from '../../redux/slices/auth';
+import './styles.scss';
 
 const Navigation = () => {
   const isUserActive = useSelector(isUserSignIn);
+  const dispatch = useDispatch();
 
+  const logoutHandler = () => dispatch(logoutUser());
   return (
     <div className="container">
       <nav className="navigation">
@@ -42,7 +44,7 @@ const Navigation = () => {
             </NavLink>
           </div>
         ) : (
-          <button>Log Out</button>
+          <button onClick={logoutHandler}>Log Out</button>
         )}
       </nav>
     </div>
