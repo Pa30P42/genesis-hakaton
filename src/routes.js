@@ -12,7 +12,7 @@ export const routes = [
 
   {
     path: '/signin',
-    label: 'AuthPage',
+    label: 'SignIn',
     exact: true,
     component: lazy(() => import('./pages/Authorization/index')),
     private: false,
@@ -21,7 +21,7 @@ export const routes = [
 
   {
     path: '/signup',
-    label: 'AuthPage',
+    label: 'SignUp',
     exact: true,
     component: lazy(() => import('./pages/Authorization/index')),
     private: false,

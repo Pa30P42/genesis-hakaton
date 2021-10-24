@@ -24,6 +24,7 @@ const Navigation = () => {
 
       {!isUserActive ? (
         <div>
+          {console.log(`signInRoute`, signInRoute)}
           <NavLink
             to={signInRoute.path}
             exact

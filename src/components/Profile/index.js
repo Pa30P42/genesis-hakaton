@@ -13,7 +13,7 @@ function Profile() {
   const currentUser = useSelector(getCurrentUser);
   const editUserProfile = user => {
     console.log('editUser');
-    dispatch(editUser({ name: user.name, email: user.email }));
+    dispatch(editUser(user));
   };
 
   return (
