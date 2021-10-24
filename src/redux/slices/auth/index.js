@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  currentUser: {},
+  currentUser: { email: '' },
   users: [],
 };
 
@@ -22,3 +22,6 @@ export const authSlice = createSlice({
 });
 
 export const authReducer = authSlice.reducer;
+
+export const { loginUser } = authSlice.actions;
+export const { createNewUser } = authSlice.actions;

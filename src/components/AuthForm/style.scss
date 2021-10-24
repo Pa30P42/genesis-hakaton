@@ -1,4 +1,4 @@
-.registerPageContainer {
+.authPageContainer {
   padding: 60px 0;
 }
 
@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: column;
   width: 450px;
-  border: 1px solid black;
+  border: 1px solid var(--secondary-decoration-color);
   border-radius: 12px;
   padding: 40px 40px 60px;
   margin: 0 auto;
@@ -18,65 +18,55 @@
   align-items: center;
   width: 100%;
 }
-.titleRegister,
-.inputRegister,
+.titleAuth,
+.inputAuth,
 .buttonSubmit {
   font-size: 16px;
 }
-.titleRegister,
-.inputRegister,
+.titleAuth,
+.inputAuth,
 .buttonSubmit {
-  // font-family: $font_family_main;
+  font-family: var(--main-font);
   line-height: 1.2em;
+  color: var(--main-font-color);
 }
-.inputRegister {
-  color: black;
-}
-.titleRegister {
+
+.titleAuth {
   display: block;
   margin-bottom: 8px;
   margin-right: 20px;
 }
-.inputRegister,
+.inputAuth,
 .buttonSubmit {
   width: 100%;
   height: 44px;
 }
-.inputRegister {
+.inputAuth {
   font-weight: 400;
   border-top: none;
   border-right: none;
   border-left: none;
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid var(--secondary-decoration-color);
   padding: 6px 12px 0;
 }
-.inputRegister {
+.inputAuth {
   margin-bottom: 30px;
 }
 .inValid {
-  border-color: red;
+  border-color: var(--error-color);
 }
 
 .buttonSubmit {
   font-weight: 600;
-  color: red;
-  border: 1px solid red;
+  color: var(--main-font-color);
+  border: transparent;
   border-radius: 8px;
-  background-color: transparent;
+  background-color: var(--main-decoration-color);
   cursor: pointer;
   margin: 50px 0 10px;
 }
 .buttonSubmit:hover,
 .buttonSubmit:focus {
   color: white;
-  border: 1px solid white;
-
-  background-color: red;
-}
-.linkToHome {
-  font-size: 12px;
-  text-decoration: underline;
-}
-.linkToHome:hover {
-  color: red;
+  background-color: var(--main-font-color);
 }

@@ -1,16 +1,9 @@
-$main-font: 'Roboto';
-$secondary-font: 'Arial';
-$main-decoration-color: #fcc931;
-$secondary-decoration-color: #ccd8c7;
-$third-decoration-color: #eeeeee;
-$main-font-color: #41483c;
-// $main-gradient: linear-gradient(
-//   -90deg,
-//   rgb(193, 73, 231) 0%,
-//   rgb(133, 166, 246) 100%
-// );
-// $hover-main-gradient: linear-gradient(
-//   90deg,
-//   rgb(193, 73, 231) 0%,
-//   rgb(133, 166, 246) 100%
-// );
+:root {
+  --main-font: 'Roboto';
+  --secondary-font: 'Arial';
+  --main-decoration-color: #fcc931;
+  --secondary-decoration-color: #ccd8c7;
+  --third-decoration-color: #eeeeee;
+  --main-font-color: #41483c;
+  --error-color: rgb(190, 1, 1);
+}
