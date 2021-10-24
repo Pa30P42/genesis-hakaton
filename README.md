@@ -1,4 +1,7 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+### HI JURY, We are Smart Components Team!:upside_down_face:
+## We're not experienced as our rivals and our application might not be that coool, but the main thing we already won in this hackathon it's an experience and networking! We met such a professionals who helped to learn new thing. We are so much grateful to Genesis for this opportunity! Have a nice viewing of our code:heart_eyes:
+
+
 ### `npm start`
 
 Runs the app in the development mode.\
