@@ -1,5 +1,5 @@
 import React, { Suspense, useEffect } from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import { routes } from './routes';
 import './stylesheet/main.scss';
 import PrivateRoute from './components/CustomRoutes/PrivateRoute';
@@ -19,8 +19,9 @@ function App() {
   useEffect(() => {
     if (!isListAvailable) dispatch(fetchMoviesThunk());
   }, []);
+
   return (
-    <BrowserRouter className="App">
+    <>
       <header>
         <Navigation />
       </header>
@@ -36,7 +37,7 @@ function App() {
           <Route component={NotFound} />
         </Switch>
       </Suspense>
-    </BrowserRouter>
+    </>
   );
 }
 
