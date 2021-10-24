@@ -7,6 +7,7 @@ import './style.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCurrentUser } from '../../../../redux/slices/auth/selectors';
 import { editUser } from '../../../../redux/slices/auth';
+import './style.scss';
 
 function Profile() {
   const dispatch = useDispatch();
@@ -27,10 +28,10 @@ function Profile() {
         onSubmit={values => console.log(`___submit: `, values)}
       >
         {({ values, handleChange, handleBlur, touched, errors }) => (
-          <Form type="submit">
+          <Form className="formContainer" type="submit">
             <label className="labelRegister">
               <div className="errorMessageWrapper">
-                <span className="titleRegister">Email</span>
+                <span className="titleRegister">Email:</span>
                 <input
                   className={`inputRegister ${
                     values.email?.length > 0 && touched.email && errors.email
@@ -55,7 +56,7 @@ function Profile() {
             </label>
             <label className="labelRegister">
               <div className="errorMessageWrapper">
-                <span className="titleRegister">Name</span>
+                <span className="titleRegister">Name:</span>
                 <input
                   className={`inputRegister ${
                     values.name?.length > 0 && touched.name && errors.name
@@ -85,10 +86,10 @@ function Profile() {
             >
               Save
             </button>
+            <button className="buttonCancel">Cancel</button>
           </Form>
         )}
       </Formik>
-      <button className="buttonCancel">Cancel</button>
     </>
   );
 }
