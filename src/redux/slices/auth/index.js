@@ -15,6 +15,15 @@ export const authSlice = createSlice({
     createNewUser: (state, { payload }) => {
       state.users = [...state.users, payload];
     },
+    editUser: (state, { payload }) => {
+      console.log(`state`, state.users);
+      console.log(`payload`, payload);
+      state.users = [
+        state.users.filter(user => {
+          user.email === payload.email ? payload : user;
+        }),
+      ];
+    },
     logoutUser: state => {
       state.currentUser = null;
     },
@@ -23,5 +32,5 @@ export const authSlice = createSlice({
 
 export const authReducer = authSlice.reducer;
 
-export const { loginUser } = authSlice.actions;
-export const { createNewUser } = authSlice.actions;
+export const { createNewUser, loginUser, editUser, logoutUser } =
+  authSlice.actions;

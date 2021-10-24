@@ -57,6 +57,9 @@ export const routes = [
 ];
 
 export const homeRoute = routes.find(route => route.label === 'HomePage');
+export const movieRoute = routes.find(route => route.label === 'MoviePage');
+export const signInRoute = routes.find(route => route.label === 'SignIn');
+export const signUpRoute = routes.find(route => route.label === 'SignUp');
 // export const dynamicsRoute = routes.find(
 //   route => route.label === 'DynamicsPage',
 // );
