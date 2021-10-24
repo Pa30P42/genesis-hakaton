@@ -16,12 +16,13 @@ export const authSlice = createSlice({
       state.users = [...state.users, payload];
     },
     editUser: (state, { payload }) => {
-      console.log(`state`, state);
-      console.log(`payload`, payload);
       const filteredUsers = [
         ...state.users.filter(user => user.email !== payload.email),
       ];
-      state.users = [...filteredUsers, payload];
+      const editedUser = { ...state.currentUser, ...payload };
+
+      state.users = [...filteredUsers, editedUser];
+      state.currentUser = { ...state.currentUser, ...payload };
     },
     logoutUser: state => {
       state.currentUser = null;

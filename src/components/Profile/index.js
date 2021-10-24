@@ -12,7 +12,6 @@ function Profile() {
   const dispatch = useDispatch();
   const currentUser = useSelector(getCurrentUser);
   const editUserProfile = user => {
-    console.log('editUser');
     dispatch(editUser(user));
   };
 
