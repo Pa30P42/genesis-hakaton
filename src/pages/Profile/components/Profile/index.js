@@ -1,12 +1,12 @@
 import React from 'react';
 import { Formik, Form } from 'formik';
-import funcMessageAuth from '../../utils/funcMessageAuth';
-import ErrorValidation from '../../utils/ErrorValidation';
-import { profileValidationSchema } from '../../utils/validationSchema';
+import funcMessageAuth from '../../../../utils/funcMessageAuth';
+import ErrorValidation from '../../../../utils/ErrorValidation';
+import { profileValidationSchema } from '../../../../utils/validationSchema';
 import './style.scss';
 import { useDispatch, useSelector } from 'react-redux';
-import { getCurrentUser } from '../../redux/slices/auth/selectors';
-import { editUser } from '../../redux/slices/auth';
+import { getCurrentUser } from '../../../../redux/slices/auth/selectors';
+import { editUser } from '../../../../redux/slices/auth';
 
 function Profile() {
   const dispatch = useDispatch();
