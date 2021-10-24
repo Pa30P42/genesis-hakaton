@@ -9,21 +9,11 @@ export const routes = [
     private: false,
     restricted: false,
   },
-
   {
-    path: '/signin',
-    label: 'AuthPage',
+    path: '/profile',
+    label: 'Profile',
     exact: true,
-    component: lazy(() => import('./pages/Authorization/index')),
-    private: false,
-    restricted: false,
-  },
-
-  {
-    path: '/signup',
-    label: 'AuthPage',
-    exact: true,
-    component: lazy(() => import('./pages/Authorization/index')),
+    component: lazy(() => import('./pages/Profile/index')),
     private: false,
     restricted: false,
   },
@@ -32,18 +22,29 @@ export const routes = [
     path: '/signin',
     label: 'SignIn',
     exact: true,
-    // component: lazy(() => import('./pages/Movie/index')),
-    // private: false,
-    // restricted: false,
+    component: lazy(() => import('./pages/Authorization/index')),
+    private: false,
+    restricted: false,
   },
+
   {
     path: '/signup',
     label: 'SignUp',
     exact: true,
-    // component: lazy(() => import('./pages/Movie/index')),
-    // private: false,
-    // restricted: false,
+    component: lazy(() => import('./pages/Authorization/index')),
+    private: false,
+    restricted: false,
   },
+
+  {
+    path: '/profile',
+    label: 'ProfilePage',
+    exact: false,
+    component: lazy(() => import('./pages/Profile/index')),
+    private: true,
+    restricted: false,
+  },
+
   {
     path: '/movie',
     label: 'MoviePage',
@@ -67,6 +68,7 @@ export const homeRoute = routes.find(route => route.label === 'HomePage');
 export const movieRoute = routes.find(route => route.label === 'MoviePage');
 export const signInRoute = routes.find(route => route.label === 'SignIn');
 export const signUpRoute = routes.find(route => route.label === 'SignUp');
+export const profileRoute = routes.find(route => route.label === 'Profile');
 // export const dynamicsRoute = routes.find(
 //   route => route.label === 'DynamicsPage',
 // );

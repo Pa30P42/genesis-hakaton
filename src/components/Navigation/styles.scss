@@ -41,3 +41,18 @@
   background-color: var(--main-font-color);
   // background-color: red;
 }
+
+.logoutBtn {
+  padding: 10;
+  // width: 60px;
+  line-height: 40px;
+  padding-left: 25px;
+  padding-right: 25px;
+  border-radius: 20px;
+  background-color: var(--error-color);
+  color: var(--third-decoration-color);
+}
+
+.homeLink {
+  margin-right: 20px;
+}
