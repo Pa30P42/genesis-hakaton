@@ -7,7 +7,7 @@ import AuthForm from './components/AuthForm';
 import { v4 as uuidv4 } from 'uuid';
 // import funcMessageAuth from './components/AuthForm/utils/funcMessageAuth';
 
-const Auth = () => {
+const AuthPage = () => {
   // const currentUser = useSelector(getCurrentUser);
   const users = useSelector(getUsers);
   const dispatch = useDispatch();
@@ -48,4 +48,4 @@ const Auth = () => {
   return <AuthForm onSubmit={onSubmit} users={users} location={location} />;
 };
 
-export default Auth;
+export default AuthPage;
