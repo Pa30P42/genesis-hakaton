@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AASA,AAAA,cAAc,AAAC,CACb,OAAO,CAAE,IAAI,CACb,eAAe,CAAE,aAAa,CAC9B,UAAU,CAAE,IAAI,CAChB,aAAa,CAAE,IAAI,CACnB,SAAS,CAAE,IAAI,CACf,YAAY,CAAE,IAAI,CACnB",
+    "sources": [
+        "../MovieList/style.scss"
+    ],
+    "names": [],
+    "file": "style.min.css"
+}

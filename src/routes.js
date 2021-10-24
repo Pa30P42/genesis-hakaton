@@ -46,7 +46,7 @@ export const routes = [
   },
 
   {
-    path: '/movie',
+    path: '/movie/:movie_id',
     label: 'MoviePage',
     exact: true,
     component: lazy(() => import('./pages/Movie/index')),
