@@ -2,9 +2,9 @@ import { lazy } from 'react';
 
 export const routes = [
   {
-    path: '/home',
+    path: '/',
     label: 'HomePage',
-    exact: false,
+    exact: true,
     component: lazy(() => import('./pages/Home/index')),
     private: false,
     restricted: false,
