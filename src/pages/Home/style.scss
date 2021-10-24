@@ -7,7 +7,7 @@
   list-style: none;
   border-radius: 0.25rem;
   padding-top: 20px;
-  justify-content: flex-end;
+  justify-content: center;
   margin: 0 auto;
 }
 
@@ -32,4 +32,3 @@ li.page-item.active > a {
   color: white;
   border-color: var(--main-decoration-color);
 }
-
