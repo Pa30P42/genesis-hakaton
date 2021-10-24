@@ -21,10 +21,10 @@ function App() {
   return (
     <BrowserRouter className="App">
       <Suspense fallback="...Loading">
+        <header>
+          <Navigation />
+        </header>
         <Switch>
-          <header>
-            <Navigation />
-          </header>
           {routes.map(route =>
             route.private ? (
               <PrivateRoute key={route.label} {...route} />
