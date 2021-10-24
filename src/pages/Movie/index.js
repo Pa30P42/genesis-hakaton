@@ -1,26 +1,43 @@
-import React from 'react';
-import "./style.scss"
+import React, { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { getMoviesById } from '../../redux/slices/movies/selectors/index'
+import "./style.scss";
 
 
-const Movie = () => {
+
+const Movie = ({ id = 671 }) => {
+
+  const chosenMovie = useSelector(state => getMoviesById(state, id));
+  // const dispatch = useDispatch();
+  // const [movie, setMovie] = useState()
+  // const moviesList = useSelector(getMoviesList);
+
+  // // const chosenMovie = useSelector(getMoviesById(671))
+
+  useEffect(() => {
+    // setMovie( moviesList[0])
+    console.log(chosenMovie)
+  }, [])
   return (
     <div className="product-container">
-     <section className="product-card">
+      <section className="product-card">
         <div className="wrapper">
-            <div className="poster-left">
-              <img className="poster-img"src="https://images.unsplash.com/photo-1605051538177-72c289389de5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2002&q=80"/>
-            </div>
-            <div className="poster-info">
-                <div className="poster-info_container">
-                    <h1 className="movie-title">Venom: Let There Be Carnage</h1>
-                    <div className="movie-descr">
-                        <h3 className="overview"> Overview</h3>
-                        <div className="overview-content-dynamic"> 
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-                        </div>
-                    </div>
+          <div className="poster-left">
+            <img className="poster-img" src={`https://image.tmdb.org/t/p/original/${chosenMovie.poster_path}`} />
+          </div>
+          <div className="poster-info">
+            <div className="poster-info_container">
+              <h1 className="movie-title">{chosenMovie.title}</h1>
+              <p className="release-day">{chosenMovie.release_date}</p>
+              <p className="rating">{chosenMovie.vote_average}</p>
+              <div className="movie-descr">
+                <h3 className="overview"> Overview</h3>
+                <div className="overview-content-dynamic">
+                  {chosenMovie.overview}
                 </div>
+              </div>
             </div>
+          </div>
         </div>
       </section>
     </div>
