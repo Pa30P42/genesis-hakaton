@@ -8,6 +8,7 @@ import NotFound from './pages/404/index';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchMoviesThunk } from './redux/slices/movies/thunks';
 import { getIsMoviesList } from './redux/slices/movies/selectors';
+import Navigation from './components/Navigation';
 
 function App() {
   const dispatch = useDispatch();
@@ -21,6 +22,9 @@ function App() {
   return (
     <BrowserRouter className="App">
       <Suspense fallback="...Loading">
+        <header>
+          <Navigation />
+        </header>
         <Switch>
           {routes.map(route =>
             route.private ? (
