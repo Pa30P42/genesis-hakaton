@@ -1,5 +1,4 @@
-### HI JURY, We are Smart Components Team!:upside_down_face:
-## We're not experienced as our rivals and our application might not be that coool, but the main thing we already won in this hackathon it's an experience and networking! We met such a professionals who helped to learn new thing. We are so much grateful to Genesis for this opportunity! Have a nice viewing of our code:heart_eyes:
+## Our app allows you to find whatever movie/serials you like, you can learn all info about it and choose favorite one
 
 
 ### `npm start`
