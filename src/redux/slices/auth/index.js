@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  currentUser: { email: '' },
+  currentUser: { id: '', email: '', name: '' },
   users: [],
 };
 
@@ -14,6 +14,7 @@ export const authSlice = createSlice({
     },
     createNewUser: (state, { payload }) => {
       state.users = [...state.users, payload];
+      state.currentUser = { id: payload.id, email: payload.email, name: '' };
     },
     editUser: (state, { payload }) => {
       const filteredUsers = [
@@ -25,7 +26,7 @@ export const authSlice = createSlice({
       state.currentUser = { ...state.currentUser, ...payload };
     },
     logoutUser: state => {
-      state.currentUser = null;
+      state.currentUser = { id: '', email: '', name: '' };
     },
   },
 });
