@@ -1,17 +1,68 @@
-.formContainer {
+.profilePageContainer {
+  padding: 60px 0;
+}
+.contentPageContainer,
+.errorMessageWrapper {
   display: flex;
-  padding: 30px 50px;
 }
-
-.labelRegister {
-  margin-right: 40px;
+.contentPageContainer {
+  flex-direction: column;
+  width: 450px;
+  border: 1px solid var(--secondary-decoration-color);
+  border-radius: 12px;
+  padding: 40px 40px 60px;
+  margin: 0 auto;
 }
-
-.titleRegister {
-  font-weight: 700;
-  margin-right: 10px;
+.errorMessageWrapper {
+  position: relative;
+  align-items: center;
+  width: 100%;
 }
-
+.titleProfile,
+.inputProfile,
 .buttonSubmit {
+  font-size: 16px;
+}
+.titleProfile,
+.inputProfile,
+.buttonSubmit {
+  font-family: var(--main-font);
+  line-height: 1.2em;
+  color: var(--main-font-color);
+}
+.titleProfile {
+  display: block;
+  margin-bottom: 8px;
   margin-right: 20px;
+}
+.inputProfile,
+.buttonSubmit {
+  width: 100%;
+  height: 44px;
+}
+.inputProfile {
+  font-weight: 400;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 1px solid var(--secondary-decoration-color);
+  padding: 6px 12px 0;
+  margin-bottom: 30px;
+}
+.inValid {
+  border-color: var(--error-color);
+}
+.buttonSubmit {
+  font-weight: 600;
+  color: var(--main-font-color);
+  border: transparent;
+  border-radius: 8px;
+  background-color: var(--main-decoration-color);
+  cursor: pointer;
+  margin: 50px 0 10px;
+}
+.buttonSubmit:hover,
+.buttonSubmit:focus {
+  color: white;
+  background-color: var(--main-font-color);
 }
