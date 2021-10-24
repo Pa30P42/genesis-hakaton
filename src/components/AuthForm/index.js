@@ -7,7 +7,6 @@ import funcMessageAuth from './utils/funcMessageAuth';
 import { authValidationSchema } from './utils/validationSchema';
 import { createNewUser, loginUser } from '../../redux/slices/auth';
 import './style.scss';
-import withAuth from '../CustomRoutes/withRouterHoc';
 
 function AuthForm() {
   const users = useSelector(state => state.auth.users);
@@ -15,8 +14,7 @@ function AuthForm() {
   const dispatch = useDispatch();
   let history = useHistory();
   const location = history.location.pathname;
-  console.log(location, 'location');
-  console.log(`wuthAuth`, withAuth);
+
   return (
     <div className="authPageContainer">
       <div className="contentPageContainer">
