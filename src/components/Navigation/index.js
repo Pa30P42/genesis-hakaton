@@ -1,7 +1,12 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import { homeRoute, signInRoute, signUpRoute } from '../../routes';
+import {
+  homeRoute,
+  profileRoute,
+  signInRoute,
+  signUpRoute,
+} from '../../routes';
 import { isUserSignIn } from '../../redux/slices/auth/selectors';
 import { logoutUser } from '../../redux/slices/auth';
 import './styles.scss';
@@ -14,15 +19,28 @@ const Navigation = () => {
   return (
     <div className="container">
       <nav className="navigation">
-        <NavLink
-          className="navLink"
-          to={homeRoute.path}
-          activeClassName="active"
-          // onClick={onHandleChange}
-        >
-          Home
-        </NavLink>
-
+        <div>
+          <NavLink
+            exact={homeRoute.exact}
+            className="navLink homeLink "
+            to={homeRoute.path}
+            activeClassName="active"
+            // onClick={onHandleChange}
+          >
+            Home
+          </NavLink>
+          {isUserActive && (
+            <NavLink
+              exact={profileRoute.exact}
+              className="navLink"
+              to={profileRoute.path}
+              activeClassName="active"
+              // onClick={onHandleChange}
+            >
+              Profile
+            </NavLink>
+          )}
+        </div>
         {!isUserActive ? (
           <div className="auth">
             <NavLink
@@ -44,7 +62,11 @@ const Navigation = () => {
             </NavLink>
           </div>
         ) : (
-          <button onClick={logoutHandler}>Log Out</button>
+          <div>
+            <button className="logoutBtn" onClick={logoutHandler}>
+              Log Out
+            </button>
+          </div>
         )}
       </nav>
     </div>

@@ -9,6 +9,14 @@ export const routes = [
     private: false,
     restricted: false,
   },
+  {
+    path: '/profile',
+    label: 'Profile',
+    exact: true,
+    component: lazy(() => import('./pages/Profile/index')),
+    private: false,
+    restricted: false,
+  },
 
   {
     path: '/signin',
@@ -60,6 +68,7 @@ export const homeRoute = routes.find(route => route.label === 'HomePage');
 export const movieRoute = routes.find(route => route.label === 'MoviePage');
 export const signInRoute = routes.find(route => route.label === 'SignIn');
 export const signUpRoute = routes.find(route => route.label === 'SignUp');
+export const profileRoute = routes.find(route => route.label === 'Profile');
 // export const dynamicsRoute = routes.find(
 //   route => route.label === 'DynamicsPage',
 // );
