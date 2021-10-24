@@ -1,78 +1,43 @@
-import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
-import { device } from '../../../common/deviceSizes';
-import { colors } from '../../../stylesheet/vars';
-
-export const NavigationContainer = styled.div`
-  margin: 0 auto;
+.navigation {
   display: flex;
-  flex-direction: column;
-  @media ${device.mobile} {
-    width: 280px;
-    padding: 27px 00px;
-  }
-  @media ${device.tablet} {
-    width: 768px;
-    padding-top: 74px;
-    padding-left: 316px;
-    padding-right: 296px;
-  }
-  @media ${device.desktop} {
-    flex-direction: row;
-    margin: 0;
-    align-items: center;
-  }
-`;
+  justify-content: space-between;
+  align-items: center;
+}
 
-export const StyleNavLInk = styled(NavLink)`
-  font-family: 'Gilroy';
-  font-style: normal;
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 20px;
-  text-decoration: none;
-  font-weight: 700;
-  color: rgb(16.5%, 21.2%, 23.1%);
-  &:hover,
-  :focus {
-    color: ${colors.main};
-  }
+.authNavLink {
+  font-weight: 400;
+  color: var(--main-decoration-color);
+  font-size: 28px;
   &.active {
-    color:${colors.main}
+    color: var(--third-decoration-color);
   }
-  
-  &:not(:last-child) {
-      @media ${device.desktop} {   
-    margin-right: 32px;
-    }
+}
+.authNavLinkLeft {
+  margin-right: 20px;
+  color: var(--secondary-accent-color);
+}
+.navLink {
+  font-weight: 400;
+  color: var(--main-font-color);
+  font-size: 28px;
+  &.active {
+    color: var(--third-decoration-color);
   }
-  &:not(:last-of-type) {
-      margin-bottom: 20px;
-    @media ${device.desktop} {   
-      margin-bottom: 0px;
-    }
-  }
-  &:last-of-type {
-    margin-bottom: 34px;
-    @media ${device.tablet} {
-        margin-bottom: 74px;
-      }
-    @media ${device.desktop} {
-        margin:0;
-      }
-    }
-  
-  @media ${device.tablet} {
-    &:last-of-type {
-      margin-bottom: 74px;
-    }
-  }
-`;
+}
 
-export const NavigationBgImg = styled.img`
-  position: absolute;
-  bottom: 0px;
-  right: 0px;
-  z-index: -1;
-  max-height: calc(100vh - 350px);
-`;
+.container {
+  padding: 20px;
+  width: 100%;
+  background-color: var(--main-decoration-color);
+  -moz-box-shadow: 3px 3px 5px 6px #ccc;
+  -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+  box-shadow: 3px 3px 5px 6px #ccc;
+  margin-bottom: 20px;
+}
+
+.auth {
+  border-radius: 10px;
+  padding: 10px;
+  background-color: var(--main-font-color);
+  // background-color: red;
+}
