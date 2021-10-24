@@ -17,7 +17,6 @@ export const authSlice = createSlice({
       state.currentUser = { id: payload.id, email: payload.email, name: '' };
     },
     editUser: (state, { payload }) => {
-      console.log(`payload`, payload);
       const filteredUsers = [
         ...state.users.filter(user => user.email !== payload.email),
       ];

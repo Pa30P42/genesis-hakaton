@@ -5,10 +5,8 @@ import { getUsers } from '../../redux/slices/auth/selectors';
 import { createNewUser, loginUser } from '../../redux/slices/auth';
 import AuthForm from './components/AuthForm';
 import { v4 as uuidv4 } from 'uuid';
-// import funcMessageAuth from './components/AuthForm/utils/funcMessageAuth';
 
 const AuthPage = () => {
-  // const currentUser = useSelector(getCurrentUser);
   const users = useSelector(getUsers);
   const dispatch = useDispatch();
   const history = useHistory();
@@ -28,7 +26,6 @@ const AuthPage = () => {
         ) &&
         history.push('/')
       );
-      // : funcMessageAuth(values.errors.password);
     } else if (location === '/signin') {
       const user = users.filter(user => user.email === values.email && user)[0];
       return (
