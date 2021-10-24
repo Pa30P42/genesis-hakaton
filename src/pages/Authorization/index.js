@@ -26,7 +26,8 @@ const AuthPage = () => {
         ) &&
         history.push('/')
       );
-    } else if (location === '/signin') {
+    }
+    if (location === '/signin') {
       const user = users.filter(user => user.email === values.email && user)[0];
       return (
         user.id &&
@@ -39,7 +40,8 @@ const AuthPage = () => {
         ) &&
         history.push('/')
       );
-    } else return;
+    }
+    return;
   };
 
   return <AuthForm onSubmit={onSubmit} users={users} location={location} />;
