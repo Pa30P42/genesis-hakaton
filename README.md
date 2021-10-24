@@ -1,4 +1,15 @@
-## Our app allows you to find whatever movie/serials you like, you can learn all info about it and choose favorite one
+## Our app allows you to find whatever movie/serials you like, you can learn all info about it and choose favorite one. Also there is ability to sign up/in. Building project we have used : 
+- React
+-  Redux 
+-  Toolkits 
+-  SCSS
+-  Formik
+-  Yup
+-  Persist
+-  Router Dom
+-  React Paginate
+-  Code formatting tools: Prettier and ESLint
+## Also our app is SEO optimazed and we have green Web Vitals
 
 
 ### `npm start`
