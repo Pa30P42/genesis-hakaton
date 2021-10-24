@@ -1,57 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import React, { Suspense, useEffect } from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { routes } from './routes';
+import './stylesheet/main.scss';
+import PrivateRoute from './components/CustomRoutes/PrivateRoute';
+import PublicRoute from './components/CustomRoutes/PublicRoute';
+import NotFound from './pages/404/index';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchMoviesThunk } from './redux/slices/movies/thunks';
+import { getIsMoviesList } from './redux/slices/movies/selectors';
+import Navigation from './components/Navigation';
+import Spinner from './components/Spinner';
 
 function App() {
+  const dispatch = useDispatch();
+
+  const isListAvailable = useSelector(getIsMoviesList);
+
+  useEffect(() => {
+    if (!isListAvailable) dispatch(fetchMoviesThunk());
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
+    <BrowserRouter className="App">
+      <header>
+        <Navigation />
       </header>
-    </div>
+      <Suspense fallback={<Spinner />}>
+        <Switch>
+          {routes.map(route =>
+            route.private ? (
+              <PrivateRoute key={route.label} {...route} />
+            ) : (
+              <PublicRoute key={route.label} {...route} />
+            ),
+          )}
+          <Route component={NotFound} />
+        </Switch>
+      </Suspense>
+    </BrowserRouter>
   );
 }
 
