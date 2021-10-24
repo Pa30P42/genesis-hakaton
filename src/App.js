@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchMoviesThunk } from './redux/slices/movies/thunks';
 import { getIsMoviesList } from './redux/slices/movies/selectors';
 import Navigation from './components/Navigation';
+import Spinner from './components/Spinner';
 
 function App() {
   const dispatch = useDispatch();
@@ -20,10 +21,10 @@ function App() {
   }, []);
   return (
     <BrowserRouter className="App">
-      <Suspense fallback="...Loading">
-        <header>
-          <Navigation />
-        </header>
+      <header>
+        <Navigation />
+      </header>
+      <Suspense fallback={<Spinner />}>
         <Switch>
           {routes.map(route =>
             route.private ? (
