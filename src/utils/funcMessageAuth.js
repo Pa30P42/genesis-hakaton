@@ -4,10 +4,6 @@ import './errorMessage.scss';
 import React from 'react';
 
 function funcMessage(errorMessage) {
-  return (
-    <>
-      <span className="errorMessage">{errorMessage}</span>
-    </>
-  );
+  return <span className="errorMessage">{errorMessage}</span>;
 }
 export default funcMessage;
