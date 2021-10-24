@@ -2,11 +2,11 @@ import React from 'react';
 import MovieListItem from '../MovieListItem';
 import './style.scss';
 
-const MovieList = ({ items }) => {
+const MovieList = ({ movie }) => {
   return (
     <div className="filmContainer">
-      {items.map(item => (
-        <MovieListItem item={item} key={item.id} />
+      {movie.map(movie => (
+        <MovieListItem movie={movie} key={movie.id} />
       ))}
     </div>
   );

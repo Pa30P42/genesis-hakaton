@@ -1,28 +1,29 @@
 import React from 'react';
 import SmartText from '../../../../components/SmartText/SmartText';
 import './style.scss';
+import { Link } from 'react-router-dom';
 
-const MovieListItem = ({ item }) => {
-  const date = new Date(item.release_date);
+const MovieListmovie = ({ movie }) => {
+  const date = new Date(movie.release_date);
 
   return (
-    <>
+    <Link to={`/movie/${movie.id}`}>
       <div className="movieListItem">
         <img
           className="moviePic"
-          src={`https://image.tmdb.org/t/p/original/${item.poster_path}`}
+          src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
           alt="movie pic"
           width="100%"
         />
-        <p className="movieTitle"> {item.title}</p>
+        <p className="movieTitle"> {movie.title}</p>
         <p className="movieRelease">
           Release date: {date.toLocaleDateString()}
         </p>
-        <p className="movieRate">Rate: {item.vote_average}</p>
-        <SmartText className="movieOverview" text={item.overview} />
+        <p className="movieRate">Rate: {movie.vote_average}</p>
+        <SmartText className="movieOverview" text={movie.overview} />
       </div>
-    </>
+    </Link>
   );
 };
 
-export default MovieListItem;
+export default MovieListmovie;

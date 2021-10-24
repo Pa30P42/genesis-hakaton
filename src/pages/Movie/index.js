@@ -1,13 +1,14 @@
 import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import { useParams } from 'react-router';
 import { getMoviesById } from '../../redux/slices/movies/selectors/index'
 import "./style.scss";
 
 
 
-const Movie = ({ id = 671 }) => {
-
-  const chosenMovie = useSelector(state => getMoviesById(state, id));
+const Movie = () => {
+  const {movie_id} = useParams();
+  const chosenMovie = useSelector(state => getMoviesById(state, movie_id));
   // const dispatch = useDispatch();
   // const [movie, setMovie] = useState()
   // const moviesList = useSelector(getMoviesList);

@@ -28,7 +28,7 @@ const Home = () => {
 
   return (
     <>
-      {currentMovies.length && <MovieList items={currentMovies} />}
+      {currentMovies.length && <MovieList movie={currentMovies} />}
       <ReactPaginate
         previousLabel={'previous'}
         nextLabel={'next'}
